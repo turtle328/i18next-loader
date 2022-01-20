@@ -5,7 +5,7 @@ const globAll = require('glob-all');
 const loaderUtils = require('loader-utils');
 const yaml = require('js-yaml');
 const set = require("lodash/set");
-import stripBomBuffer from'strip-bom-buf';
+const stripBomBuffe = require('strip-bom-buf');
 
 function enumerateLangs(dir) {
   return fs.readdirSync(dir).filter(function (file) {
