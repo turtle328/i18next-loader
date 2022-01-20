@@ -1,11 +1,11 @@
-const path = require('path');
-const fs = require('fs');
-const merge = require('lodash/merge');
-const globAll = require('glob-all');
-const loaderUtils = require('loader-utils');
-const yaml = require('js-yaml');
-const set = require("lodash/set");
-import stripBomBuffer from'strip-bom-buf';
+import path from 'path';
+import fs from 'fs';
+import merge from ('lodash/merge');
+import globAll from ('glob-all');
+import loaderUtils from ('loader-utils');
+import yaml from ('js-yaml');
+import set from ("lodash/set");
+import stripBomBuffer from ('strip-bom-buf');
 
 function enumerateLangs(dir) {
   return fs.readdirSync(dir).filter(function (file) {
@@ -20,7 +20,7 @@ function findAll(globs, cwd) {
 }
 
 module.exports = function () {
-  this.cacheable && this.cacheable();
+  this.cacheable && thi.cacheable();
   const options = loaderUtils.getOptions(this) || {};
 
   if (!options.include) {
