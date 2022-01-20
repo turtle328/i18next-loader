@@ -5,6 +5,7 @@ const globAll = require('glob-all');
 const loaderUtils = require('loader-utils');
 const yaml = require('js-yaml');
 const set = require("lodash/set");
+import stripBomBuffer from'strip-bom-buf';
 
 function enumerateLangs(dir) {
   return fs.readdirSync(dir).filter(function (file) {
@@ -64,9 +65,8 @@ module.exports = function () {
           console.info("\t" + fullPath);
         }
 
-        let fileContent = fs.readFileSync(fullPath);
+        const fileContent = stripBomBuffer(fs.readFileSync(fullPath));
         // strip BOM from file
-        fileContent = fileContent.replace(/^\uFEFF/gm, "").replace(/^\u00BB\u00BF/gm, "");
         const extname = path.extname(fullPath);
         let parsedContent;
         if (extname === ".yaml" || extname === ".yml") {

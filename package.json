@@ -1,6 +1,6 @@
 {
-  "name": "@alienfast/i18next-loader",
-  "version": "1.1.4",
+  "name": "@turtle328/i18next-loader",
+  "version": "1.0.0",
   "description": "Webpack loader for client embedded i18next locales from json or yaml.",
   "publishConfig": {
     "access": "public"
@@ -32,19 +32,20 @@
   "homepage": "https://github.com/alienfast/i18next-loader",
   "maintainers": [
     {
-      "name": "Kevin Ross",
-      "email": "kevin.ross@alienfast.com"
+      "name": "Alex Rosenbach",
+      "email": "alexrosenbach@gmail.com"
     }
   ],
   "dependencies": {
     "glob-all": "^3.1.0",
     "js-yaml": "^3.13.1",
     "loader-utils": "^1.2.3",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "strip-bom-buf": "^3.0.1"
   },
   "devDependencies": {
-    "@alienfast/ci": "^7.0.7",
     "chai": "^4.2.0",
-    "mocha": "^6.2.1"
+    "mocha": "^9.1.4",
+    "yarn": "^1.22.17"
   }
 }
