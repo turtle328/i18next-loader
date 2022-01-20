@@ -6,7 +6,6 @@
     "access": "public"
   },
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "yarn test:unit",
     "test:unit": "mocha",

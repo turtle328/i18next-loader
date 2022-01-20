@@ -1,16 +1,15 @@
-import path from 'path';
-import chai from ('chai');
-import loader from '../index.js';
-
-const assert = chai.assert;
+const path = require('path')
+const chai = require('chai')
+const assert = chai.assert
+const loader = require('../index')
 
 describe('basename', function () {
-  ['yaml', 'json'].forEach((type) => {
+  [ 'yaml', 'json' ].forEach((type) => {
     context(type, () => {
       let thisScope;
       beforeEach(function (done) {
         //mock webpack loader this scope
-        const emptFn = function () { };
+        const emptFn = function () {}
         thisScope = {
           addDependency: emptFn,
           addContextDependency: emptFn,
@@ -19,22 +18,22 @@ describe('basename', function () {
           query: {
             basenameAsNamespace: true
           }
-        };
-        done();
-      });
+        }
+        done()
+      })
 
-      function assertCommon(resStore) {
-        assert.strictEqual(resStore.dev.main.main.test, 'Dev dev dev!');
-        assert.strictEqual(resStore.de.main.main.test, 'Das ist ein Test!');
-        assert.strictEqual(resStore.en.main.main.test, 'This is a test!');
-        assert.strictEqual(resStore.fr.main.main.test, 'Ceci est un test!');
+      function assertCommon (resStore) {
+        assert.strictEqual(resStore.dev.main.main.test, 'Dev dev dev!')
+        assert.strictEqual(resStore.de.main.main.test, 'Das ist ein Test!')
+        assert.strictEqual(resStore.en.main.main.test, 'This is a test!')
+        assert.strictEqual(resStore.fr.main.main.test, 'Ceci est un test!')
       }
 
       it('should generate the structure', function () {
-        const res = loader.call(thisScope, 'index.js');
-        const resStore = eval(res);
-        assertCommon(resStore);
-      });
-    });
-  });
-});
+        const res = loader.call(thisScope, 'index.js')
+        const resStore = eval(res)
+        assertCommon(resStore)
+      })
+    })
+  })
+})
