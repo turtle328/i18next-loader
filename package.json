@@ -1,6 +1,6 @@
 {
   "name": "@turtle328/i18next-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack loader for client embedded i18next locales from json or yaml.",
   "publishConfig": {
     "access": "public"
@@ -27,9 +27,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/alienfast/i18next-loader"
+    "url": "https://github.com/turtle328/i18next-loader"
   },
-  "homepage": "https://github.com/alienfast/i18next-loader",
+  "homepage": "https://github.com/turtle328/i18next-loader",
   "maintainers": [
     {
       "name": "Alex Rosenbach",
